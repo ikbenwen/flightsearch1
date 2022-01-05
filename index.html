@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Flight Search App</title>
+    <script type="text/javascript" src="data/data.js"></script>
+    <script src="Search.js"></script>
+
+</head>
+<body>
+<div id="container">
+    <header>
+        <h1 id="myBtn">Zoek Vlucht</h1>
+    </header>
+    <main>
+        <div id="form-container">
+            <form>
+
+                <label>
+                    Van:
+                    <input id="origin" type="text" placeholder="Vul uw vertrekpunt in"/>
+                </label>
+                <label>
+                    Naar:
+                    <input id="destination" type="text" placeholder="Vul uw bestemming in"/>
+                </label>
+                <label>
+                    Aantal:
+                    <select name="number" id="number">
+                        <option value="1">1 persoon</option>
+                        <option value="2">2 personen</option>
+                        <option value="3">3 personen</option>
+                        <option value="4">4 personen</option>
+                        <option value="5">5 personen</option>
+                        <option value="6">6 personen</option>
+                        <option value="7">7 personen</option>
+                        <option value="8">8 personen</option>
+                    </select>
+                </label>
+                <label>
+                    Vertrek Datum:
+                    <input type="date" id="date" name="datum">
+                </label>
+            </form>
+            <button id="search-btn" class="btn" type="submit" onclick="flightInfo()">Zoek</button>
+        </div>
+        <div id="flights-container">
+            <table id="search-result">
+                <tr>
+                    <th>Van</th>
+                    <th>Naar</th>
+                    <th>Datum</th>
+                </tr>
+            </table>
+        </div>
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Boek uw vlucht</h1>
+                <div id="destination-container">
+                    <p>Bestemming: </p>
+                    <p></p>
+                </div>
+
+
+                <label for="email"><b>Email</b></label>
+                <input id="email" type="text" placeholder="Vul uw email adres in" name="email" required>
+
+                <label for="name"><b>Name</b></label>
+                <input id="name" type="text" placeholder="Vul uw naam in" name="name" required>
+
+                <button type="button" class="btn" onclick="showTravelerInfo()">Verzend</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Annuleer</button>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>
